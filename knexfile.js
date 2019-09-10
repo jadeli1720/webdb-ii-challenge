@@ -4,41 +4,12 @@ module.exports = {
 
   development: {
     client: 'sqlite3',
+    useNullAsDefault: true, //used for sqlite
     connection: {
-      filename: './dev.sqlite3'
-    }
+      //GOTCHA: needs to be from the root folder! Not from where this file lives
+      filename: './data/car-dealer.db3'
+    },
   },
 
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
-
-  production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
 
 };
