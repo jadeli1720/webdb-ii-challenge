@@ -16,4 +16,19 @@ router.get('/', (req,res) => {
 
 })
 
+router.get('/:id', (req, res) => {
+    const  { id } = req.params;
+    console.log({id})
+    db('cars')
+      .where( {id} )
+      .first()
+      .then(car => {
+          res.status(200).json(car)
+      })
+      .catch(err => {
+          console.log("GET ID", err)
+          res.status(500).json( { error: `Failed to retrieve car with that specified id`} )
+      })
+})
+
 module.exports = router;

@@ -3,7 +3,7 @@ exports.up = function (knex) {
     //Don't forget return!!
     return knex.schema.createTable('cars', tbl => {
         //id, primary key, auto-increment, integer
-        tbl.increments('carsId');
+        tbl.increments();
 
         //vin: numbers and letters, unique, required(not null), 17 characters in length
         tbl
