@@ -9,6 +9,10 @@ module.exports = {
       //GOTCHA: needs to be from the root folder! Not from where this file lives
       filename: './data/car-dealer.db3'
     },
+
+    migrations: {
+      directory: './data/migrations'
+    }
   },
 
 
