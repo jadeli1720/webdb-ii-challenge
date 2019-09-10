@@ -7,7 +7,7 @@ exports.up = function (knex) {
 
         //vin: numbers and letters, unique, required(not null), 17 characters in length
         tbl
-            .string('vin', 17)
+            .string('vin')
             .unique()
             .notNullable();
         
@@ -23,7 +23,7 @@ exports.up = function (knex) {
 
         //milage: integer, required, up to 6
         tbl
-            .string('milage', 6)
+            .integer('milage')
             .notNullable();
 
         //transmission type: string, required
